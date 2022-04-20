@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postit-frontend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: postit-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postit-frontend
+    spec:
+      containers:
+        - name: postit-frontend
+          image: rafaelgiro/postit-frontend
+          ports:
+            - containerPort: 80

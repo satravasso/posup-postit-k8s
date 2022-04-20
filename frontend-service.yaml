@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postit-frontend-load-balancer
+spec:
+  selector:
+    app: postit-frontend
+  ports:
+    - port: 3000
+      targetPort: 80
+  type: LoadBalancer
